@@ -23,5 +23,8 @@ def translate():
     except Exception as e:
         return jsonify({"error": str(e)})
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+import os
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))  # Render के लिए पोर्ट सेट करें
+    app.run(host="0.0.0.0", port=port)
